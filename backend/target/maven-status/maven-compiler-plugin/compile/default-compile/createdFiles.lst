@@ -1,0 +1,12 @@
+com\loopnexus\crm\config\SecurityConfig.class
+com\loopnexus\crm\auth\controller\AuthController.class
+com\loopnexus\crm\navigation\controller\SidebarNavigationController.class
+com\loopnexus\crm\navigation\dto\SidebarItemDto$SidebarItemDtoBuilder.class
+com\loopnexus\crm\navigation\dto\SidebarItemDto.class
+com\loopnexus\crm\LoopNexusCrmApplication.class
+com\loopnexus\crm\auth\dto\LoginResponse$LoginResponseBuilder.class
+com\loopnexus\crm\auth\dto\LoginRequest.class
+com\loopnexus\crm\navigation\dto\SidebarSectionDto.class
+com\loopnexus\crm\navigation\dto\SidebarSectionDto$SidebarSectionDtoBuilder.class
+com\loopnexus\crm\auth\dto\LoginResponse.class
+com\loopnexus\crm\auth\dto\LoginRequest$LoginRequestBuilder.class
