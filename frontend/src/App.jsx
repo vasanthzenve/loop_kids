@@ -8,6 +8,14 @@ import ContentLicensingDashboard from './components/Content/ContentLicensingDash
 import BroadcastingControlDashboard from './components/Content/BroadcastingControlDashboard';
 import DigitalAssetManagementDashboard from './components/Content/DigitalAssetManagementDashboard';
 import MobileAppManagementDashboard from './components/Content/MobileAppManagementDashboard';
+import UserCrmDashboard from './components/CRM/UserCrmDashboard';
+import ProducerPipelineDashboard from './components/CRM/ProducerPipelineDashboard';
+import CelebrityCrmDashboard from './components/CRM/CelebrityCrmDashboard';
+import DirectorPortalDashboard from './components/CRM/DirectorPortalDashboard';
+import SponsorCrmDashboard from './components/CRM/SponsorCrmDashboard';
+import AdvertiserCrmDashboard from './components/CRM/AdvertiserCrmDashboard';
+import InvestorCrmDashboard from './components/CRM/InvestorCrmDashboard';
+import SalesCrmDashboard from './components/CRM/SalesCrmDashboard';
 
 export function App() {
   const [currentUser, setCurrentUser] = useState(() => {
@@ -23,8 +31,8 @@ export function App() {
     return null;
   });
 
-  // Default to mobile-app-management as requested by user
-  const [activeModuleId, setActiveModuleId] = useState('mobile-app-management');
+  // Default to sales-crm as requested by user
+  const [activeModuleId, setActiveModuleId] = useState('sales-crm');
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   const handleLoginSuccess = (userData) => {
@@ -127,6 +135,14 @@ export function App() {
         </header>
 
         {/* Content Body Router */}
+        {activeModuleId === 'sales-crm' && <SalesCrmDashboard />}
+        {activeModuleId === 'investor-crm' && <InvestorCrmDashboard />}
+        {activeModuleId === 'advertiser-crm' && <AdvertiserCrmDashboard />}
+        {activeModuleId === 'sponsor-crm' && <SponsorCrmDashboard />}
+        {activeModuleId === 'director-portal' && <DirectorPortalDashboard />}
+        {activeModuleId === 'celebrity-crm' && <CelebrityCrmDashboard />}
+        {activeModuleId === 'production-house-crm' && <ProducerPipelineDashboard />}
+        {activeModuleId === 'user-crm' && <UserCrmDashboard />}
         {activeModuleId === 'ott-cms' && <OttCmsDashboard />}
         {activeModuleId === 'ai-content-management' && <AiContentManagementDashboard />}
         {activeModuleId === 'content-licensing' && <ContentLicensingDashboard />}
@@ -134,7 +150,15 @@ export function App() {
         {activeModuleId === 'digital-asset-management' && <DigitalAssetManagementDashboard />}
         {activeModuleId === 'mobile-app-management' && <MobileAppManagementDashboard />}
 
-        {activeModuleId !== 'ott-cms' && 
+        {activeModuleId !== 'sales-crm' &&
+         activeModuleId !== 'investor-crm' &&
+         activeModuleId !== 'advertiser-crm' &&
+         activeModuleId !== 'sponsor-crm' &&
+         activeModuleId !== 'director-portal' &&
+         activeModuleId !== 'celebrity-crm' &&
+         activeModuleId !== 'production-house-crm' &&
+         activeModuleId !== 'user-crm' &&
+         activeModuleId !== 'ott-cms' && 
          activeModuleId !== 'ai-content-management' && 
          activeModuleId !== 'content-licensing' && 
          activeModuleId !== 'broadcasting-control' &&
